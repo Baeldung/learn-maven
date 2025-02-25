@@ -12,5 +12,6 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>building-our-application-with-maven-end</module>
     </modules>
 </project>
