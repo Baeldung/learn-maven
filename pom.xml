@@ -13,6 +13,8 @@
 
     <modules>
         <module>repositories-start</module>
-        <module>repositories-end</module>
+	<module>repositories-end</module>
+	<module>maven-dependency-management-start</module>
+	<module>maven-dependency-management-end</module>
     </modules>
 </project>
