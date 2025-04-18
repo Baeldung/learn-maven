@@ -8,4 +8,12 @@
     <artifactId>building-our-application-with-maven-start</artifactId>
     <version>1.0.0</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>3.2.2</version>
+        </dependency>
+    </dependencies>
+
 </project>
