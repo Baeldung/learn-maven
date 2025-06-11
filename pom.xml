@@ -16,5 +16,7 @@
         <module>tests-and-the-maven-build-start</module>
         <module>tests-and-the-maven-build-end</module>
         <module>maven-dependencies</module>
+        <module>maven-profiles-start</module>
+        <module>maven-profiles-end</module>
     </modules>
 </project>
