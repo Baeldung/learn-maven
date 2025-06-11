@@ -12,9 +12,11 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>the-parent-pom-start</module>
+        <module>the-parent-pom-end</module>
         <module>repositories-start</module>
-	<module>repositories-end</module>
-	<module>maven-dependency-management-start</module>
-	<module>maven-dependency-management-end</module>
+        <module>repositories-end</module>
+        <module>maven-dependency-management-start</module>
+        <module>maven-dependency-management-end</module>
     </modules>
 </project>
