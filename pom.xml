@@ -18,5 +18,7 @@
         <module>repositories-end</module>
         <module>maven-dependency-management-start</module>
         <module>maven-dependency-management-end</module>
+        <module>build-plugins-start</module>
+        <module>build-plugins-end</module>
     </modules>
 </project>
