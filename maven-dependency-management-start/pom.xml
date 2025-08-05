@@ -9,7 +9,7 @@
     <version>0.1.0</version>
 
     <name>maven-dependency-management-start</name>
-    <description>Learn Maven - Dependencies Management - Start</description>
+    <description>Learn Maven - The dependencyManagement Element and BOM - Start</description>
 
     <packaging>jar</packaging>
 
@@ -61,8 +61,8 @@
             <maven.compiler.source>21</maven.compiler.source>
             <maven.compiler.target>21</maven.compiler.target>
         -->
-        <maven.compiler.release>21</maven.compiler.release>
-
+        <maven.compiler.release>${java.version}</maven.compiler.release>
+        <java.version>21</java.version>
         <spring.boot.version>3.2.2</spring.boot.version>
         <h2.version>2.2.224</h2.version>
     </properties>

@@ -9,20 +9,19 @@
     <version>0.1.0</version>
 
     <name>maven-dependency-management-end</name>
-    <description>Learn Maven - Dependencies Management - End</description>
+    <description>Learn Maven - The dependencyManagement Element and BOM - End</description>
 
     <packaging>jar</packaging>
 
-    <parent>
+    <!-- We can use Spring Boot's parent POM instead to inherit all dependency
+    management -->
+    <!-- <parent>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.2.2</version>
-        <relativePath /> <!-- lookup parent from repository -->
-    </parent>
+        <relativePath /> 
+    </parent> -->
 
-    <!-- Reference only; not need with <parent> element pointing to
-    spring-boot-starter-parent -->
-    <!-- <dependencyManagement>
+    <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -31,8 +30,14 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!-- This is not required, it is included in the Boot BOM-->
+            <!-- <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-jpa</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency> -->
         </dependencies>
-    </dependencyManagement> -->
+    </dependencyManagement>
 
 
     <dependencies>
@@ -50,6 +55,8 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
+            <!-- We can override the version from the BOM if needed -->
+            <version>${h2.version}</version>
             <scope>runtime</scope>
         </dependency>
 
@@ -73,7 +80,14 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Prior to JDK 9 and 3.8 Maven versions -->
+        <!--
+            <maven.compiler.source>21</maven.compiler.source>
+            <maven.compiler.target>21</maven.compiler.target>
+        -->
+        <maven.compiler.release>${java.version}</maven.compiler.release>
         <java.version>21</java.version>
-        <!-- <spring.boot.version>3.2.2</spring.boot.version> -->
+        <spring.boot.version>3.2.2</spring.boot.version>
+        <h2.version>2.3.232</h2.version>
     </properties>
 </project>
