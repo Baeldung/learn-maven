@@ -13,5 +13,6 @@
 
     <modules>
         <module>building-our-application-with-maven-end</module>
+        <module>importing-project-ide</module>
     </modules>
 </project>
