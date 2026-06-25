@@ -15,6 +15,7 @@ public record CampaignDto( // @formatter:off
    String description) { // @formatter:on
 
     public static class Mapper {
+
         public static Campaign toModel(CampaignDto dto) {
             if (dto == null)
                 return null;
