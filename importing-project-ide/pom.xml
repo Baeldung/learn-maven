@@ -8,18 +8,34 @@
     <properties>
         <!-- Prior to JDK 9 and 3.8 Maven versions -->
         <!--
-            <maven.compiler.source>21</maven.compiler.source>
-            <maven.compiler.target>21</maven.compiler.target>
+            <maven.compiler.source>25</maven.compiler.source>
+            <maven.compiler.target>25</maven.compiler.target>
         -->
-        <maven.compiler.release>21</maven.compiler.release>
-        <spring.boot.version>3.2.2</spring.boot.version>
+        <maven.compiler.release>25</maven.compiler.release>
+        <spring.boot.version>4.0.7</spring.boot.version>
         <h2.version>2.2.224</h2.version>
+        <junit.version>6.1.0</junit.version>
+        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>3.5.6</maven-surefire-plugin.version>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <!-- Reach JUnit 6.1.0: the bare junit-jupiter.version property is inert in a no-parent/no-BOM POM,
+                 so import the junit-bom directly to override the 6.0.3 that spring-boot-starter-test ships. -->
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${junit.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <!-- Main dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-webmvc</artifactId>
             <version>${spring.boot.version}</version>
         </dependency>
         <dependency>
@@ -47,4 +63,20 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <!-- Pinned for JDK 25: this POM does not inherit Boot's plugin management (no parent/BOM),
+                 so the default-bound plugins would be too old for class-file major 69. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>

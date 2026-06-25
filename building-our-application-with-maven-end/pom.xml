@@ -8,18 +8,30 @@
     <properties>
         <!-- Prior to JDK 9 and 3.8 Maven versions -->
         <!--
-            <maven.compiler.source>21</maven.compiler.source>
-            <maven.compiler.target>21</maven.compiler.target>
+            <maven.compiler.source>25</maven.compiler.source>
+            <maven.compiler.target>25</maven.compiler.target>
         -->
-        <maven.compiler.release>21</maven.compiler.release>
-        <spring.boot.version>3.2.2</spring.boot.version>
+        <maven.compiler.release>25</maven.compiler.release>
+        <spring.boot.version>4.0.7</spring.boot.version>
         <h2.version>2.2.224</h2.version>
+        <junit.version>6.1.0</junit.version>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${junit.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <!-- Main dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-webmvc</artifactId>
             <version>${spring.boot.version}</version>
         </dependency>
         <dependency>
