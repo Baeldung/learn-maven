@@ -17,12 +17,22 @@
     management -->
     <!-- <parent>
         <groupId>org.springframework.boot</groupId>
-        <version>3.2.2</version>
-        <relativePath /> 
+        <version>4.0.7</version>
+        <relativePath />
     </parent> -->
 
     <dependencyManagement>
         <dependencies>
+            <!-- JUnit 6.1.0 BOM import: declared before the Boot BOM so it wins;
+            a property in the importing POM does not override an imported BOM's
+            internal version property -->
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${junit.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -44,7 +54,7 @@
         <!-- web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-webmvc</artifactId>
         </dependency>
 
         <!-- data -->
@@ -86,8 +96,9 @@
             <maven.compiler.target>21</maven.compiler.target>
         -->
         <maven.compiler.release>${java.version}</maven.compiler.release>
-        <java.version>21</java.version>
-        <spring.boot.version>3.2.2</spring.boot.version>
+        <java.version>25</java.version>
+        <spring.boot.version>4.0.7</spring.boot.version>
         <h2.version>2.3.232</h2.version>
+        <junit.version>6.1.0</junit.version>
     </properties>
 </project>

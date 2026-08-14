@@ -17,7 +17,7 @@
         <!-- web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-webmvc</artifactId>
             <version>${spring.boot.version}</version>
         </dependency>
 
@@ -50,6 +50,20 @@
         </dependency>
     </dependencies>
 
+    <dependencyManagement>
+        <dependencies>
+            <!-- JUnit 6.1.0 BOM: bare junit-jupiter.version property is inert
+            with no parent (per-dependency POM) -->
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${junit-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <build>
         <!-- additional tasks and configurations for build process -->
     </build>
@@ -58,14 +72,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Prior to JDK 9 and 3.8 Maven versions -->
         <!--
-            <maven.compiler.source>21</maven.compiler.source>
-            <maven.compiler.target>21</maven.compiler.target>
+            <maven.compiler.source>25</maven.compiler.source>
+            <maven.compiler.target>25</maven.compiler.target>
         -->
-        <maven.compiler.release>21</maven.compiler.release>
-        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
-        <maven-pmd-plugin.version>3.26.0</maven-pmd-plugin.version>
+        <maven.compiler.release>25</maven.compiler.release>
+        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+        <maven-pmd-plugin.version>3.28.0</maven-pmd-plugin.version>
+        <junit-bom.version>6.1.0</junit-bom.version>
 
-        <spring.boot.version>3.2.2</spring.boot.version>
+        <spring.boot.version>4.0.7</spring.boot.version>
         <h2.version>2.2.224</h2.version>
     </properties>
 </project>

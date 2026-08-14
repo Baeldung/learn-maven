@@ -16,7 +16,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.2</version>
+        <version>4.0.7</version>
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
 
@@ -24,7 +24,7 @@
         <!-- web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-webmvc</artifactId>
         </dependency>
 
         <!-- data -->
@@ -58,9 +58,10 @@
 
     <properties>
         <!-- <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> -->
-        <!-- <maven.compiler.release>21</maven.compiler.release> -->
-        <java.version>21</java.version>
+        <!-- <maven.compiler.release>25</maven.compiler.release> -->
+        <java.version>25</java.version>
         <h2.version>2.2.224</h2.version>
-        <hibernate.version>6.4.10.Final</hibernate.version>
+        <hibernate.version>7.2.19.Final</hibernate.version>
+        <junit-jupiter.version>6.1.0</junit-jupiter.version>
     </properties>
 </project>
