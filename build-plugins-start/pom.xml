@@ -50,20 +50,6 @@
         </dependency>
     </dependencies>
 
-    <dependencyManagement>
-        <dependencies>
-            <!-- JUnit 6.1.0 BOM: bare junit-jupiter.version property is inert
-            with no parent (per-dependency POM) -->
-            <dependency>
-                <groupId>org.junit</groupId>
-                <artifactId>junit-bom</artifactId>
-                <version>${junit-bom.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <build>
         <!-- additional tasks and configurations for build process -->
     </build>
@@ -78,7 +64,6 @@
         <maven.compiler.release>25</maven.compiler.release>
         <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
         <maven-pmd-plugin.version>3.28.0</maven-pmd-plugin.version>
-        <junit-bom.version>6.1.0</junit-bom.version>
 
         <spring.boot.version>4.0.7</spring.boot.version>
         <h2.version>2.2.224</h2.version>
