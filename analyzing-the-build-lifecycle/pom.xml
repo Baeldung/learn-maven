@@ -10,19 +10,6 @@
 
     <packaging>jar</packaging>
 
-    <dependencyManagement>
-        <dependencies>
-            <!-- JUnit 6.1.0 BOM: overrides the JUnit version managed by Spring Boot 4.0.7 -->
-            <dependency>
-                <groupId>org.junit</groupId>
-                <artifactId>junit-bom</artifactId>
-                <version>6.1.0</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <dependencies>
         <!-- web -->
         <dependency>
